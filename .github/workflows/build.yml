@@ -1,0 +1,15 @@
+name: Creating docker image
+on: [push]
+jobs:
+  image:
+    name: Creating docker image
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v1
+
+      - name: Creating docker image
+        run: |
+          docker build -t docker-php .
